@@ -193,7 +193,7 @@ window.deleteEntry = function (index) {
     localStorage.setItem("patients", JSON.stringify(patients));
 
     // Notify the main process to delete the file
-    ipcRenderer.send("deleteFile", patient.name);
+    window.electronAPI.send("deleteFile", patient.name); // Updated this line
 
     // Re-render the patient list
     displayPatients(patients);

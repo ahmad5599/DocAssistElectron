@@ -1,9 +1,9 @@
 const { ipcRenderer, contextBridge } = require("electron");
 
 contextBridge.exposeInMainWorld("electronAPI", {
-  send: ipcRenderer.send,
-  invoke: ipcRenderer.invoke,
-  updateFileName: (oldName, newName) => ipcRenderer.invoke("update-file-name", oldName, newName)
+  send: (channel, ...args) => ipcRenderer.send(channel, ...args),
+  invoke: (channel, ...args) => ipcRenderer.invoke(channel, ...args),
+  updateFileName: (oldName, newName) => ipcRenderer.invoke("update-file-name", oldName, newName),
 });
 
 
