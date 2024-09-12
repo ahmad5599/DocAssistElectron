@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DocAssist</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <div class="m-20">
+    <h1 class="flex justify-center font-semibold text-5xl my-5 text-slate-500">
+      DocAssist
+    </h1>
+
+    <div class="mx-32 lg:mx-[30rem]">
+      <form id="searchForm" class="flex gap-10">
+        <input id="searchInput" class="border-2 w-full py-2 px-3 rounded-xl" type="text" placeholder="Enter Patient name to search" />
+        <!-- <button type="submit" id="searchBtn" class="rounded-md bg-slate-500 px-3 text-white">Search</button> -->
+      </form>
+    </div>
+
+    <div id="patientList" class="p-5 m-5 rounded-xl bg-slate-200 overflow-y-auto max-h-[492px]">
+      <!-- Patient entries will be dynamically added here -->
+      <div class="flex justify-between bg-slate-50 mb-3 rounded-lg p-2 items-center">
+        <span>No data found!</span>
+      </div>
+    </div>
+
+    <!-- Button to open the form -->
+    <span id="openFormBtn" class="w-14 h-14 flex items-center justify-center rounded-full bg-slate-500 absolute right-5 z-20 bottom-5 cursor-pointer">
+      <span class="text-white text-2xl">+</span>
+    </span>
+
+   
+
+    <!-- Modal Form -->
+    <div id="modalBackdrop" class="fixed inset-0 bg-black bg-opacity-50 z-10 hidden"></div>
+    <div id="modalForm" class="fixed inset-0 flex items-center justify-center z-20 hidden">
+      <div id="modalDiv" class="bg-white p-8 rounded-lg shadow-lg w-11/12 max-w-md relative">
+        <button id="closeFormBtn" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">X</button>
+        <form id="addPatientForm">
+          <div class="mb-4">
+            <input id="nameInput" required type="text" placeholder="Name" class="w-full p-2 border rounded-md" />
+          </div>
+          <div class="mb-4">
+            <input id="ageInput" required type="number" placeholder="Age" class="w-full p-2 border rounded-md" />
+          </div>
+          <div class="mb-4">
+            <input id="locationInput" required type="text" placeholder="Location" class="w-full p-2 border rounded-md" />
+          </div>
+          <div class="mb-4">
+            <input id="diseaseInput" required type="text" placeholder="Disease" class="w-full p-2 border rounded-md" />
+          </div>
+          <button type="submit" id="button_id" class="bg-slate-500 text-white py-2 px-4 rounded-md">Add</button>
+        </form>
+      </div>
+    </div>
+    
+    <!-- View Model -->
+    <div id="detailsModal" class="modal hidden fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-semibold" id="modalTitle"></h2>
+        <p id="modalContent"></p>
+        <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+
+    <!-- edit Model -->
+    <div id="editModal" class="modal hidden fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <button class="mt-4 bg-gray-500 text-white px-4 py-2 rounded" onclick="closeEditModal()">X</button>
+        <h2 class="text-xl font-semibold">Edit Patient</h2>
+        
+        <label for="editName">Name:</label>
+        <input type="text" id="editName" class="block border p-2 mb-2">
+    
+        <label for="editAge">Age:</label>
+        <input type="number" id="editAge" class="block border p-2 mb-2">
+        
+        <label for="editLocation">Location:</label>
+        <input type="text" id="editLocation" class="block border p-2 mb-2">
+        
+        <label for="editDisease">Disease:</label>
+        <input type="text" id="editDisease" class="block border p-2 mb-2">
+        
+        <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="saveChanges()">Save Changes</button>
+      </div>
+    </div>
+    
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

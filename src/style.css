@@ -1,0 +1,289 @@
+/* General styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f3f5f4;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.main-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #7cc262;
+  margin-bottom: 40px;
+}
+
+/* Search input */
+.search-container {
+  text-align: center;
+}
+
+.search-input {
+  width: 40%;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  text-align: center; /* Horizontally center the text */
+  line-height: 1.5; /* Adjust the line-height to center vertically */
+}
+
+.search-input::placeholder {
+  text-align: center; /* Center the placeholder text horizontally */
+}
+
+.patient-list {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-y: auto; /* Use auto for better behavior */
+  height: 26rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling */
+  scrollbar-width: none; /* Firefox */
+}
+
+.patient-list::-webkit-scrollbar {
+  display: none; /* Webkit browsers */
+}
+
+.no-data {
+  text-align: center;
+  color: #aaa;
+  padding: 20px;
+}
+
+/* Floating Add button */
+.open-form-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  font-size: 2rem;
+  width: 60px; /* Set equal width */
+  height: 60px; /* Set equal height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Make it circular */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.plus-icon {
+  display: block;
+  text-align: center;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1040;
+}
+
+/* Modal content */
+.modal-form,
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1050;
+}
+
+.modal-content {
+  width: 800px;
+  margin: 0 auto;
+}
+
+/* Label styling inside the modal */
+.modal-content label {
+  display: block; /* Ensures the label takes up the full width available */
+  margin-bottom: 5px; /* Adds space between the label and the input field */
+  text-align: start; /* Aligns text to the left */
+  font-weight: bold; /* Makes the label text bold for better visibility */
+}
+
+.close-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  float: right;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 90%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  pointer-events: auto; /* Ensure it's not set to 'none' */
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+/* Patient card container */
+.patient-card {
+  display: flex;
+  justify-content: space-between;
+  background-color: #7cc262;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patient-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Patient name */
+.patient-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Button container */
+.patient-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Buttons */
+.btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Detail button */
+.detail-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.detail-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Edit button */
+.edit-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #218838;
+}
+
+/* Delete button */
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* No data message */
+.no-data-container {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+  background-color: #f4f7fa;
+  border-radius: 8px;
+}
+
+/* Modal styling */
+.modal-content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+#modalContent {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.close-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.close-btn:hover {
+  background-color: darkred;
+}
+
+.hidden {
+  display: none;
+}
+
+.w-full {
+  width: 90%;
+}

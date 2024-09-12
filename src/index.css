@@ -1,0 +1,167 @@
+#searchForm{
+  margin: 10px;
+  justify-content: center;
+  gap:10px;
+}
+#searchInput{
+  width: 100vh;
+  padding: 5px;
+}
+
+
+
+
+#patientList{
+  margin: 40px;
+  padding: 20px;
+}
+.patientCardDiv{
+  justify-content: space-between;
+  
+}
+#patientCard{
+  gap:20px;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+#openFormBtn{
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 100%;
+}
+
+
+
+
+#modalDiv{
+  padding: 20px;
+  border-radius: 20px;
+  gap: 10px;
+}
+#closeFormBtn{
+  position: inherit;
+  right: 0px;
+  top: 5px;
+}
+
+
+
+
+
+.items-center{
+  align-items: center;
+}
+
+.bg-red-800{
+  background-color: red;
+}
+
+.text-white{
+  color: white;
+}
+
+.m-20 {
+  margin: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-5xl {
+  font-size: 3rem;
+}
+
+.my-5 {
+  margin: 20px 0;
+}
+
+.text-slate-500 {
+  color: #64748b;
+}
+
+.mx-32 {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.rounded-xl {
+  border-radius: 8px;
+}
+
+.bg-slate-500 {
+  background-color: #64748b;
+}
+
+.bg-slate-200 {
+  background-color: #e2e8f0;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.rounded-md {
+  border-radius: 6px;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.z-20 {
+  z-index: 20;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}

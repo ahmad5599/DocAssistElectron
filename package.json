@@ -1,0 +1,58 @@
+{
+  "name": "doc_assist",
+  "productName": "DocAssist",
+  "version": "1.0.0",
+  "description": "DocAssist is a powerful tool for managing and organizing documents efficiently. It offers features such as note-taking, file management, and document synchronization.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-rpm": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+    "@electron-forge/plugin-fuses": "^7.4.0",
+    "@electron/asar": "^3.2.13",
+    "@electron/fuses": "^1.8.0",
+    "electron": "32.0.2"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "asar": true
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "authors": "Muhammad Ahmad Hamid",
+            "description": "DocAssist is a powerful tool for managing and organizing documents efficiently. It offers features such as note-taking, file management, and document synchronization."
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin",
+            "win32"
+          ]
+        }
+      ]
+    }
+  },
+  "keywords": [],
+  "author": {
+    "name": "Muhammad Ahmad Hamid",
+    "email": "ahmad.hamid599@outlook.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
+  }
+}

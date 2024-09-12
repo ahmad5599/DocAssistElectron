@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocAssist</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="main-heading">💊💉DocAssist🩺⚕🏥</h1>
+
+      <div class="search-container">
+        <form id="searchForm" class="form-group">
+          <input
+            id="searchInput"
+            class="search-input"
+            type="text"
+            placeholder="Enter Patient name to search"
+          />
+        </form>
+      </div>
+
+      <div id="patientList" class="patient-list">
+        <!-- Patient entries will be dynamically added here -->
+        <div class="no-data">
+          <span>No data found!</span>
+        </div>
+      </div>
+
+      <!-- Button to open the form -->
+      <span id="openFormBtn" class="open-form-btn">
+        <span class="plus-icon">+</span>
+      </span>
+
+      <!-- Modal Form -->
+      <div id="modalBackdrop" class="modal-backdrop"></div>
+      <div id="modalForm" class="modal-form hidden">
+        <div id="modalDiv" class="modal-content">
+          <button id="closeFormBtn" class="close-btn">X</button>
+          <h2 class="modal-title">Add Patient</h2>
+
+          <form id="addPatientForm">
+            <div class="mb-4">
+              <input
+                id="nameInput"
+                required
+                type="text"
+                placeholder="Name"
+                maxlength="50"
+                class="form-input"
+              />
+            </div>
+            <div class="mb-4">
+              <input
+                id="ageInput"
+                required
+                type="number"
+                placeholder="Age"
+                class="form-input"
+              />
+            </div>
+            <div class="mb-4">
+              <input
+                id="locationInput"
+                required
+                type="text"
+                placeholder="Location"
+                class="form-input"
+              />
+            </div>
+            <div class="mb-4">
+              <input
+                id="diseaseInput"
+                required
+                type="text"
+                placeholder="Disease"
+                class="form-input"
+              />
+            </div>
+            <button type="submit" id="addButtonId" class="submit-btn">
+              Add
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- View Model -->
+      <div id="detailsModal" class="modal hidden">
+        <div class="modal-content">
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <p id="modalContent"></p>
+        </div>
+        <button class="close-btn w-full" onclick="closeModal()">Close</button>
+      </div>
+
+      <!-- Edit Modal -->
+      <div id="editModal" class="modal hidden">
+        <div class="modal-content">
+          <h2 class="modal-title">Edit Patient</h2>
+
+          <label for="editName">Name:</label>
+          <input type="text" id="editName" maxlength="50" class="form-input" />
+
+          <label for="editAge">Age:</label>
+          <input type="number" id="editAge" class="form-input" />
+
+          <label for="editLocation">Location:</label>
+          <input type="text" id="editLocation" class="form-input" />
+
+          <label for="editDisease">Disease:</label>
+          <input type="text" id="editDisease" class="form-input" />
+
+          <button class="submit-btn" onclick="saveChanges()">
+            Save Changes
+          </button>
+        </div>
+        <button class="close-btn w-full" onclick="closeEditModal()">close</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
